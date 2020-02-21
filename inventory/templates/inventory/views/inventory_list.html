@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>Smart Health 102 | Inventory</title>
+
+        <!-- Link & Style & Web Icon -->
+        {% include 'dashboard/components/compiled_css.html' %}
+    </head>
+    <body>
+        <div class="container-scroller">
+            
+            {% include 'dashboard/containers/navbar/main_navbar.html' %}
+
+            <!-- Main Content Container -->
+            <div class="container-fluid page-body-wrapper">
+                <div class="main-panel">
+                    <!-- Content -->
+                    {% include 'inventory/data/data_inventory_list.html' %}
+                    <!-- End of Content -->
+
+                    <!-- Footer -->
+                    {% include 'dashboard/containers/footer/main_footer.html' %}
+                    <!-- End of Footer -->
+                </div>
+            </div>
+            <!-- End of Main Content Container -->
+        </div>
+
+        <!-- Scripts -->
+        {% include 'dashboard/components/compiled_js.html' %}
+    </body>
+</html>

@@ -1,0 +1,71 @@
+{% load static %} {% include 'inventory/components/compiled_css.html' %}
+<div class="content-wrapper">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-sm-11">
+                                    <strong class="card-title"
+                                        >Patients</strong
+                                    >
+                                </div>
+                                <div class="col-sm-1">
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary "
+                                    >
+                                        Add Patients
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table
+                                id="bootstrap-data-table-export"
+                                class="table table-striped table-bordered"
+                            >
+                                <thead>
+                                    <tr>
+                                        <th>Medical ID</th>
+                                        <th>Last Name</th>
+                                        <th>First Name</th>
+                                        <th>Middle Name</th>
+                                        <th>Street & Barangay</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Zip Code</th>
+                                        <th>Phone Number</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% for p in patients %}
+                                    <tr>
+                                        <td>{{p.medicalId}}</td>
+                                        <td>{{p.firstName}}</td>
+                                        <td>{{p.lastName}}</td>
+                                        <td>{{p.middleName}}</td>
+                                        <td>{{p.street}}</td>
+                                        <td>{{p.city}}</td>
+                                        <td>{{p.state}}</td>
+                                        <td>{{p.zipCode}}</td>
+                                        <td>{{p.phoneNumber}}</td>
+                                        <td></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .animated -->
+    </div>
+
+    {% include 'inventory/components/compiled_js.html' %}
+</div>
